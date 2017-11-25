@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import BowlingAlley from '../components/BowlingAlley';
-import { roll } from '../actions';
+import { play } from '../actions';
 
 
 const mapDispatchToProps = (dispatch) => ({
   onThrowClick: () => {
-    dispatch(roll());
+    dispatch(play());
   }
 });
 
