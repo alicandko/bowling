@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ScoreboardContainer from '../containers/ScoreboardContainer';
+import BowlingAlleyContainer from '../containers/BowlingAlleyContainer';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        Hello World
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <ScoreboardContainer />
+    <BowlingAlleyContainer />
+  </div>
+);
 
 export default App;
