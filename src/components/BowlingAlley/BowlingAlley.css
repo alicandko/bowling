@@ -1,5 +1,5 @@
 .bowling-alley-container {
-  margin-top: 50px;
+  margin-top: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@
   height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center space-between;
   align-items: center;
 }
 
