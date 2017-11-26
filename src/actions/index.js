@@ -13,12 +13,18 @@ export const newFrame = () => {
   };
 };
 
+export const newGame = () => {
+  return {
+    type: types.NEW_GAME,
+  };
+};
+
 export const play = () => {
   return (dispatch, getState) => {
     const { gameComplete } = getState().scoringReducer;
     if (!gameComplete) {
       const { standingPins } = getState().scoringReducer;
-      const downPins = Math.floor((Math.random() * standingPins) + 1);
+      const downPins = getRandomNumber(1, standingPins);      
       dispatch(roll(downPins));
 
       const { frameComplete } = getState().scoringReducer;
@@ -31,9 +37,8 @@ export const play = () => {
   };
 };
 
-export const newGame = () => {
-  return {
-    type: types.NEW_GAME,
-  };
+const getRandomNumber = (lowerLimit, upperLimit) => {
+  return Math.floor((Math.random() * upperLimit) + lowerLimit);
 };
+
 
