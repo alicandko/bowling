@@ -1,5 +1,5 @@
 import * as types from '../constants/actionTypes';
-import { getStandingPins, getDownPinsList, getScores, isFrameComplete } from './scoringUtilities';
+import { getStandingPins, getDownPinsList, getScores, isFrameComplete, isGameComplete } from './scoringUtilities';
 import { List } from 'immutable';
 
 var roll = 0;
@@ -10,6 +10,7 @@ const initialState = {
   scores: List(),
   frame: 1,
   frameComplete: false,
+  gameComplete: false
 };
 
 export const scoringReducer = (state = initialState, action) => {
@@ -23,7 +24,8 @@ export const scoringReducer = (state = initialState, action) => {
       downPinsList,
       scores,
       frame: state.frame,
-      frameComplete: isFrameComplete(roll, action.downPins)
+      frameComplete: isFrameComplete(roll, action.downPins),
+      gameComplete: isGameComplete(state.scores)  
     };
   }
 
@@ -34,8 +36,13 @@ export const scoringReducer = (state = initialState, action) => {
       downPinsList: state.downPinsList,
       scores: getScores(state.downPinsList, state.frame),
       frame: state.frame + 1,
-      frameComplete: false 
+      frameComplete: false,
+      gameComplete: isGameComplete(state.scores)   
     };
+
+  case types.NEW_GAME: 
+    roll = 0;
+    return initialState;
     
   default:
     return state;

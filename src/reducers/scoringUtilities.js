@@ -10,6 +10,11 @@ export const isFrameComplete = (roll, downPins) => {
   return (roll === 1 && downPins === PIN_COUNT) || roll === 2;
 };
 
+export const isGameComplete = (scores) => {
+  const lastScoreIndex = 9;
+  return scores.get(lastScoreIndex) ? true : false;
+};
+
 export const getDownPinsList = (downPinsList, frame, roll, downPins) => {
   const indexFrame = frame - 1;
   if (roll === 1) {

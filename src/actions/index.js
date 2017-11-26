@@ -15,14 +15,25 @@ export const newFrame = () => {
 
 export const play = () => {
   return (dispatch, getState) => {
-    const { standingPins } = getState().scoringReducer;
-    const downPins = Math.floor((Math.random() * standingPins) + 1);
-    dispatch(roll(downPins));
+    const { gameComplete } = getState().scoringReducer;
+    if (!gameComplete) {
+      const { standingPins } = getState().scoringReducer;
+      const downPins = Math.floor((Math.random() * standingPins) + 1);
+      dispatch(roll(downPins));
 
-    const { frameComplete } = getState().scoringReducer;
-    if (frameComplete) {
-      dispatch(newFrame());
+      const { frameComplete } = getState().scoringReducer;
+      if (frameComplete) {
+        setTimeout(() => {
+          dispatch(newFrame());
+        }, 500);
+      }
     }
+  };
+};
+
+export const newGame = () => {
+  return {
+    type: types.NEW_GAME,
   };
 };
 
