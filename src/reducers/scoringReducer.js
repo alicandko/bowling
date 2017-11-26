@@ -15,15 +15,17 @@ const initialState = {
 const scoringReducer = (state = initialState, action) => {
   switch (action.type) {
   case types.ROLL: {
-    const downPinsList = getDownPinsList(state.downPinsList, state.frame, state.roll, action.downPins);
+    const roll = state.roll + 1;
+    const downPinsList = getDownPinsList(state.downPinsList, state.frame, roll, action.downPins);
     const scores = getScores(downPinsList, state.frame);
+    const frameComplete = isFrameComplete(roll, action.downPins);
     return {
       standingPins: getStandingPins(state.standingPins, action.downPins),
       downPinsList,
       scores,
-      roll: state.roll + 1,
+      roll,
       frame: state.frame,
-      frameComplete: isFrameComplete(state.roll, action.downPins),
+      frameComplete,
       gameComplete: isGameComplete(state.scores)  
     };
   }
