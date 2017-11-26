@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.scoreboard-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreboard {
+  width: 1100px;
+  height: 100px;
+  display: flex;
+}
+
+.frame {
+  border: 1px solid #000000;
+  width: 100px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.roll-container {
+  width: 100px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.roll {
+  border: 1px solid #000000;
+  width: 50px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  width: 100px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Scoreboard from '../components/Scoreboard';
+import Scoreboard from '../components/Scoreboard/Scoreboard';
 import { List } from 'immutable';
 
 const getContent = (downPinsList, scores) => {

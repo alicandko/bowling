@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import BowlingAlley from '../components/BowlingAlley';
+import BowlingAlley from '../components/BowlingAlley/BowlingAlley';
 import { play, newGame } from '../actions';
 
 const mapDispatchToProps = (dispatch) => ({
