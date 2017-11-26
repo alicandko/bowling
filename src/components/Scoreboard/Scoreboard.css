@@ -12,13 +12,15 @@
 }
 
 .scoreboard {
+  border: 1px solid #000000;
+  border-right: none;
   width: 1100px;
   height: 100px;
   display: flex;
 }
 
 .frame {
-  border: 1px solid #000000;
+  border-right: 1px solid #000000;
   width: 100px;
   display: flex;
   justify-content: flex-start;
@@ -32,7 +34,8 @@
 }
 
 .roll {
-  border: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
   width: 50px;
   height: 40px;
   display: flex;
