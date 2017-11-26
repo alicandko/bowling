@@ -24,7 +24,7 @@ export const play = () => {
     const { gameComplete } = getState().scoringReducer;
     if (!gameComplete) {
       const { standingPins } = getState().scoringReducer;
-      const downPins = getRandomNumber(1, standingPins);      
+      const downPins = getRandomNumber(0, standingPins);      
       dispatch(roll(downPins));
 
       const { frameComplete } = getState().scoringReducer;

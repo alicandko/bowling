@@ -45,15 +45,16 @@ export const getScores = (downPinsList, frame) => {
   };
 
   const isStrikeCalculable = () => {
-    return flatDownList.get(index + 1) && flatDownList.get(index + 2) ? true : false;
+    return flatDownList.get(index + 1) !== undefined && 
+      flatDownList.get(index + 2) !== undefined ? true : false;
   };
 
   const isSpareCalculable = () => {
-    return flatDownList.get(index + 2) ? true : false;
+    return flatDownList.get(index + 2) !== undefined ? true : false;
   };
 
   const isNormalFrameCalculable = () => {
-    return flatDownList.get(index + 1) ? true : false;
+    return flatDownList.get(index + 1) !== undefined ? true : false;
   };
 
   for (let i = 0; i < frame; i++) {
