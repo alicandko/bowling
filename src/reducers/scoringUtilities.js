@@ -1,6 +1,7 @@
 import { List } from 'immutable';
 
 const PIN_COUNT = 10;
+const LAST_EXTRA_FRAME = 12;
 
 export const getStandingPins = (standingPins, downPins) => {
   return standingPins - downPins;
@@ -17,6 +18,9 @@ export const isGameComplete = (scores) => {
 
 export const getDownPinsList = (downPinsList, frame, roll, downPins) => {
   const indexFrame = frame - 1;
+  if (frame === LAST_EXTRA_FRAME) {
+    return downPinsList.set(indexFrame - 1, downPinsList.get(indexFrame - 1).push(downPins));
+  }
   if (roll === 1) {
     return downPinsList.push(List([downPins]));          
   }
