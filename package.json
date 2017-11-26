@@ -14,7 +14,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test:lint": "eslint --ext=js --ext=jsx .",
+    "test:unit": "react-scripts test --env=jsdom",
+    "test": "npm run test:lint && npm run test:unit",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
