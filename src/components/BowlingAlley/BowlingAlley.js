@@ -10,7 +10,7 @@ const BowlingAlley = ({ pins, frameComplete, gameComplete, onThrowClick, onNewGa
         <ul>
           {pins.map((pinRow, key) =>
             <pre key={key}>
-              <li className='aa'>{ pinRow }</li>
+              <li>{ pinRow }</li>
             </pre>
           )}
         </ul>
